@@ -1,18 +1,15 @@
 package practice;
-
 import java.util.ArrayList;
-
 @SuppressWarnings("hiding")
-public class OfferingIterator<Offering> implements ListIterator {
+public class ProductIterator<Product> implements ListIterator {
 
-
-	ArrayList<Offering> list;
+	
+	ArrayList<Product> list;
 	int ObjNum = -1;
-	public OfferingIterator(ArrayList<Offering> list) {
+	public ProductIterator(ArrayList<Product> list) {
 
 		this.list = list;
 	}
-
 
 	public boolean hasNext() {
 		if (ObjNum >= list.size() - 1) {
@@ -21,7 +18,6 @@ public class OfferingIterator<Offering> implements ListIterator {
 			return true;
 		}
 	}
-
 	public Object Next() {
 		if (hasNext()) {
 			ObjNum++;

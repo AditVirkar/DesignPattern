@@ -1,53 +1,26 @@
-import java.util.Collection;
+package practice;
 
-public class ClassProductList {
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 
-	private ReminderVisitor reminderVisitor;
+@SuppressWarnings("serial")
+public class ClassProductList extends ArrayList<Product> {
 
-	private ReminderVisitor reminderVisitor;
-
-	private Product product;
-
-	private Collection<Product> product;
-
-	private ClassProductList.ProductIterator productIterator;
-
-	private ClassProductList.ProductIterator productIterator;
-
-	private ClassProductList.ProductIterator productIterator;
-
+	
 	public void accept(NodeVisitor visitor) {
 
 	}
+	public void readProductFromFile() throws IOException {
 
-	public class ProductIterator {
-
-		private ClassProductList classProductList;
-
-		private ClassProductList classProductList;
-
-		private ClassProductList.ProductIterator productIterator;
-
-		private ClassProductList.ProductIterator productIterator;
-
-		private ClassProductList classProductList;
-
-		public boolean hasNext() {
-			return false;
+		BufferedReader br = new BufferedReader(new FileReader("C:/Users/rmalempa/Desktop/SER 515/practice/src/database/ProductInfo.txt/"));
+		String line = null;
+		while ((line = br.readLine()) != null) {
+			Product product = new Product(line, 0);
+			add(product);
 		}
-
-		public Product Next() {
-			return null;
-		}
-
-		public void MoveToHead() {
-
-		}
-
-		public void Remove() {
-
-		}
-
+			br.close();
 	}
 
 }

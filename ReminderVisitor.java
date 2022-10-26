@@ -1,10 +1,16 @@
+package practice;
+
 public class ReminderVisitor extends NodeVisitor {
 
-	private Reminder m_Reminder;
+	Reminder m_Reminder;
+	
+	public ReminderVisitor(Reminder reminder) {
 
-	private ClassProductList classProductList;
+		this.m_Reminder = reminder;
+	}
 
-	private ClassProductList classProductList;
+	ClassProductList classProductList;
+	
 
 	public void visitProduct(Product product) {
 
@@ -15,6 +21,15 @@ public class ReminderVisitor extends NodeVisitor {
 	}
 
 	public void visitFacade(Facade facade) {
+		System.out.println("Visit Facade in Remainder");
+		@SuppressWarnings({ "rawtypes", "unchecked" })
+		ProductIterator productList = new ProductIterator(facade.thePerson.classProductList);
+		System.out.println("Visits each prouct available for user\n");
+		while (productList.hasNext()) {
+			Object product = productList.Next();
+			System.out.println("for product " + product.getProductName());
+			product.accept(this);
+		}
 
 	}
 

@@ -1,19 +1,26 @@
-public class Person {
+package practice;
 
-	private ProductMenu theProductMenu;
+public abstract class Person {
 
-	private ProductMenu productMenu;
 
-	private ProductMenu productMenu;
 
-	public void showMenu() {
+	ProductMenu productMenu;
+	
+	private String userName;
+	
+	Product theSelectedProduct;
+	
+	ClassProductList classProductList;
 
-	}
+
+
+	public abstract void showMenu();
 
 	public void showAddButton() {
 
 	}
 
+	
 	public void showViewButton() {
 
 	}
@@ -26,8 +33,61 @@ public class Person {
 
 	}
 
-	public ProductMenu CreateProductMenu() {
-		return null;
+
+	public Person() {
+
+		classProductList = new ClassProductList();
+	}
+
+	public abstract void CreateProductMenu(); 
+	
+	public void addProduct(Product product) {
+
+		classProductList.add(product);
+	}
+	
+	
+
+	public String getUserName() {
+
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+
+		this.userName = userName;
+	}
+	
+	
+	public ClassProductList getProductList() {
+
+		return classProductList;
+	}
+
+
+
+	public ProductMenu getCourseMenu() {
+
+		return productMenu;
+	}
+
+	
+
+	public void setProductMenu(ProductMenu theProductMenu) {
+
+		this.productMenu = theProductMenu;
+	}
+	
+	
+
+	public Product getSelectedProduct() {
+
+		return theSelectedProduct;
+	}
+
+	public void setSelectedProduct(Product theSelectedProduct) {
+
+		this.theSelectedProduct = theSelectedProduct;
 	}
 
 }
