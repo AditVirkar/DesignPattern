@@ -1,10 +1,9 @@
+package practice;
 public class Trading {
 
-	private Product product;
-
-	private OfferingList offeringList;
-
 	public void accept(NodeVisitor visitor) {
+		System.out.println("Accept Trading Class Method.");
+		visitor.visitTrading(this);
 
 	}
 

@@ -1,9 +1,7 @@
-import java.util.Collection;
+package practice;
+import java.util.ArrayList;
+@SuppressWarnings("serial")
+public class OfferingList extends ArrayList<Offering> {
 
-public class OfferingList {
-
-	private Trading trading;
-
-	private Collection<Offering> offering;
-
+	
 }

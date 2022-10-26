@@ -1,8 +1,52 @@
-public interface ProductMenu {
+package practice;
 
-	private Person person;
 
-	private Person person;
+
+public abstract class ProductMenu {
+
+
+	private Product theSelectedProduct;
+
+	
+
+	ProductCategory nProductCategory;
+	public enum ProductCategory {
+		MeatProductMenu, ProduceProductMenu
+	}
+
+
+	public ProductMenu(Product theSelectedProduct, ProductCategory category) {
+		this.theSelectedProduct=theSelectedProduct;
+		this.nProductCategory=category;
+		
+	}
+	
+	public Product getProduct() {
+
+		return theSelectedProduct;
+	}
+
+	
+
+	public void setProduct(Product theSelectedProduct) {
+
+		this.theSelectedProduct = theSelectedProduct;
+	}
+
+	public ProductCategory getProductCategory() {
+
+		return nProductCategory;
+	}
+
+
+	public void setProductCategory(ProductCategory theNProductCategory) {
+
+		this.nProductCategory = theNProductCategory;
+	}
+	
+	
+	
+	
 
 	public abstract void showMenu();
 
